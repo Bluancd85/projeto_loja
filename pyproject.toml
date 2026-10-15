@@ -1,0 +1,50 @@
+[project]
+name = "desafio-aula"
+version = "0.1.0"
+description = "Mini Loja — CLI Python + SQLite com relatórios de vendas."
+authors = [
+    {name = "Luan Freitas",email = "contatoluancmf@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{include = "desafio_aula", from = "src"}]
+
+[tool.poetry.scripts]
+desafio-aula = "desafio_aula.main:main"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "*"
+poethepoet = "*"
+pytest = "*"
+pytest-cov = "*"
+mkdocs = "*"
+mkdocs-material = "*"
+
+[tool.ruff]
+target-version = "py314"
+line-length = 100
+exclude = ["dist", "build", "site", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = [
+    "--cov=desafio_aula",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-fail-under=75",
+]
+
+[tool.poe.tasks]
+lint = "ruff check ."
+format = "ruff format ."
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
