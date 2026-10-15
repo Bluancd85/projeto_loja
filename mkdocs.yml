@@ -1,0 +1,23 @@
+site_name: Mini Loja
+site_description: CLI Python + SQLite com relatórios de vendas de uma loja virtual.
+theme:
+  name: material
+  language: pt-BR
+  features:
+    - navigation.tabs
+    - content.code.copy
+
+nav:
+  - Início: index.md
+  - Instalação: instalacao.md
+  - Uso: uso.md
+  - Arquitetura: arquitetura.md
+  - Desenvolvimento: desenvolvimento.md
+  - Testes: testes.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - toc:
+      permalink: true
